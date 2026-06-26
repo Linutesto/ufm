@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ufm"
+version = "0.1.0"
+description = "Unified Fractal Memory — treat VRAM + RAM as one elastic pool so a single GPU behaves like a mini-cluster."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Yan Desbiens" }]
+keywords = ["pytorch", "memory", "vram", "offload", "moe", "training", "gpu"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["torch>=2.0"]
+
+[project.urls]
+Homepage = "https://yandesbiens.com"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ufm"]
