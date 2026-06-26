@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use UFM in your research, please cite it as below."
+title: "UFM — Unified Fractal Memory"
+abstract: >-
+  A residency manager that treats GPU VRAM and CPU RAM as one elastic pool,
+  prefetching and evicting model sub-modules (e.g. MoE experts) so a single GPU
+  can run models whose footprint exceeds device memory. Extracted from the
+  Fractal Neurons research program.
+type: software
+authors:
+  - family-names: Desbiens
+    given-names: Yan
+    affiliation: "Éthiqueia Québec inc."
+    # orcid: "https://orcid.org/0000-0000-0000-0000"  # add when available
+version: 0.1.1
+date-released: "2026-06-27"
+license: MIT
+url: "https://yandesbiens.com/projects/ufm/"
+repository-code: "https://github.com/Linutesto/ufm"
+keywords:
+  - pytorch
+  - memory-management
+  - vram
+  - mixture-of-experts
+  - gpu
+  - offloading
+preferred-citation:
+  type: article
+  title: "Unified Fractal Memory: running a routed model larger than VRAM on a single consumer GPU"
+  authors:
+    - family-names: Desbiens
+      given-names: Yan
+      affiliation: "Éthiqueia Québec inc."
+  year: 2026
+  url: "https://yandesbiens.com/blog/ufm-benchmark/"
+  notes: "Reproducible benchmark (proof drop #1), Éthiqueia Québec inc."
