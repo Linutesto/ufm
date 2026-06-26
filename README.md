@@ -1,6 +1,15 @@
 # UFM — Unified Fractal Memory
 
+![status](https://img.shields.io/badge/status-v0.1.0-ff5fa2)
+![python](https://img.shields.io/badge/python-3.9%2B-3776ab)
+![pytorch](https://img.shields.io/badge/pytorch-2.0%2B-ee4c2c)
+![license](https://img.shields.io/badge/license-MIT-22c55e)
+
 > Train bigger models on the GPU you already own.
+
+> 🧬 Extracted from the [**Fractal Neurons**](https://yandesbiens.com/projects/fractal-neurons/)
+> research framework by [Yan Desbiens](https://yandesbiens.com). Part of a wider body of
+> local-first AI work — see also [`fmm`](https://github.com/Linutesto/fmm).
 
 UFM treats **GPU VRAM + CPU pinned RAM** as one elastic memory pool. It keeps the
 hot parts of your model on-device, asynchronously prefetches what you're about to
