@@ -1,0 +1,2 @@
+t,gpu_alloc_gb,gpu_reserved_gb,proc_ram_gb,sys_ram_gb,nvme_offload_gb
+0.0006,0.5757,0.584,0.9607,11.0297,0.0

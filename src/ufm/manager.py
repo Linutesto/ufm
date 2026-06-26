@@ -59,9 +59,14 @@ class UFM:
     def register_module(self, module: torch.nn.Module) -> None:
         params = [p for p in module.parameters() if p.requires_grad]
         nbytes = sum(_bytes_of(p.data) for p in params)
-        self.registry[module] = {"state": "gpu", "params": params, "bytes": nbytes}
+        # Residency is detected from where the params actually live, so modules
+        # may be registered while resident on CPU (the key case for fitting a
+        # bank larger than VRAM). prefetch()/activate() will page them in.
+        on_gpu = any(p.data.is_cuda for p in params) if params else False
+        state = "gpu" if on_gpu else "cpu"
+        self.registry[module] = {"state": state, "params": params, "bytes": nbytes}
         self.lru[module] = None
-        self.stats["gpu_bytes"] += nbytes
+        self.stats["gpu_bytes" if on_gpu else "cpu_bytes"] += nbytes
 
     def _evict_one(self) -> bool:
         # Simple LRU GPU->CPU pinned evict

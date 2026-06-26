@@ -12,4 +12,4 @@ from .manager import UFM
 from .offload import OffloadedAdam
 
 __all__ = ["UFM", "OffloadedAdam"]
-__version__ = "0.1.0"
+__version__ = "0.1.1"
